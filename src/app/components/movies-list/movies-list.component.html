@@ -1,0 +1,9 @@
+<h2>Available Movies</h2>
+
+<ul class="movies-list">
+    <li class="movie-item" *ngFor="let movie of movies">
+        <a routerLink="/detail/{{movie.id}}">
+            {{movie.title}}
+        </a>
+    </li>
+</ul>
