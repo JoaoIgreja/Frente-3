@@ -4,3 +4,4 @@ export interface Curator {
     email: string;
     password: string;
 }
+

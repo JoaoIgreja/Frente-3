@@ -4,6 +4,7 @@ import { Component, Input } from '@angular/core';
 import { Movie } from 'src/app/interfaces/movie';
 import { MovieService } from 'src/app/services/movie.service';
 
+
 @Component({
   selector: 'app-movie-detail',
   templateUrl: './movie-detail.component.html',
@@ -34,7 +35,7 @@ export class MovieDetailComponent {
       this.movieService.deleteMovie(this.movie).subscribe(() => this.goBack())
     }
   }
-
+  
   goBack() {
     this.location.back();
   }
