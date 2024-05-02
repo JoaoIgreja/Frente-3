@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { MOVIES } from 'src/app/utils/mock-movies';
+import { Movie } from 'src/app/interfaces/movie';
+import { MovieService } from 'src/app/services/movie.service';
 
 @Component({
   selector: 'app-movies-list',
@@ -7,5 +8,15 @@ import { MOVIES } from 'src/app/utils/mock-movies';
   styleUrls: ['./movies-list.component.scss'],
 })
 export class MoviesListComponent {
-  movies = MOVIES;
+  movies: Movie[] = [];
+
+  constructor(private movieService: MovieService) { };
+
+  ngOnInit(): void {
+    this.getMovies();
+  }
+
+  getMovies(): void {
+    this.movieService.getMovies().subscribe(movies => this.movies = movies)
+  }
 }
