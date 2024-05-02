@@ -1,8 +1,8 @@
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Component, Input } from '@angular/core';
-import { MOVIES } from 'src/app/utils/mock-movies';
 import { Movie } from 'src/app/interfaces/movie';
+import { MovieService } from 'src/app/services/movie.service';
 
 @Component({
   selector: 'app-movie-detail',
@@ -12,16 +12,27 @@ import { Movie } from 'src/app/interfaces/movie';
 export class MovieDetailComponent {
   @Input() movie?: Movie;
 
-  constructor(private route: ActivatedRoute, private location: Location) { }
+  constructor(private route: ActivatedRoute, private location: Location, private movieService: MovieService) { }
 
   ngOnInit(): void {
-    this.getHero();
+    this.getMovie();
   }
 
-  getHero(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    // Método estático por enquanto, passar para um service depois
-    this.movie = MOVIES.find((movie: Movie) => movie.id === id);
+  getMovie(): void {
+    const id = this.route.snapshot.paramMap.get('id') as string;
+    this.movieService.getMovie(id).subscribe(movie => this.movie = movie);
+  }
+
+  saveMovie(): void {
+    if (this.movie) {
+      this.movieService.updateMovie(this.movie).subscribe(() => this.goBack())
+    }
+  }
+
+  deleteMovie(): void {
+    if(this.movie) {
+      this.movieService.deleteMovie(this.movie).subscribe(() => this.goBack())
+    }
   }
 
   goBack() {
