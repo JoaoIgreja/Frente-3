@@ -1,5 +1,8 @@
 <div *ngIf="movie">
-    <h2>{{movie.name}} Details</h2>
+    <h2> {{movie.name}} Details </h2>
+
+    <hr>
+
     <p>
         <label for="name">Name:</label>
         <input type="text" id="name" [(ngModel)]="movie.name">
