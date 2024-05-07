@@ -9,12 +9,14 @@ import { MovieDetailComponent } from './components/movie-detail/movie-detail.com
 import { MoviesListComponent } from './components/movies-list/movies-list.component';
 
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule
   ],
   declarations: [
     AppComponent,

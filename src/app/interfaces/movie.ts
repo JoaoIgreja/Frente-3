@@ -1,4 +1,4 @@
-import { Critic } from "./critic";
+// import { Critic } from "./critic";
 
 export interface Movie {
     id: string;
@@ -11,4 +11,10 @@ export interface Movie {
     // banner: string
 
     critics: Critic[];
+}
+    name: string;
+    description: string;
+    score: number;
+    genre: string
+    director: string
 }

@@ -1,9 +1,16 @@
-<h2>Available Movies</h2>
+<div>
+  <h2 class="ml-8 pt-8 pb-8 text-white text-2xl text-semibold"> Available Movies </h2>
+</div>
 
-<ul class="movies-list">
+<hr>
+
+<div class="text-white">
+  <ul class="movies-list">
     <li class="movie-item" *ngFor="let movie of movies">
-        <a routerLink="/detail/{{movie.id}}">
-            {{movie.title}}
-        </a>
+      <a routerLink="/detail/{{movie.id}}">
+        {{movie.name}}
+      </a>
     </li>
-</ul>
+  </ul>
+</div>
+

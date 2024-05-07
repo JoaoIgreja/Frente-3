@@ -4,7 +4,32 @@
     <p><b>Release Date: </b>{{movie.release_date}}</p>
     <p><b>Duration (minutes): </b>{{movie.duration}}</p>
 
-    <button type="button" (click)="goBack()">Go back</button>
+    <h2> {{movie.name}} Details </h2>
 
-    <!-- TODO: Adicionar criticas aqui também -->
+    <hr>
+
+    <p>
+        <label for="name">Name:</label>
+        <input type="text" id="name" [(ngModel)]="movie.name">
+    </p>
+    <p>
+        <label for="description">Description:</label>
+        <input type="text" id="description" [(ngModel)]="movie.description">
+    </p>
+    <p>
+        <label for="score">Score:</label>
+        <input type="text" id="score" [(ngModel)]="movie.score">
+    </p>
+    <p>
+        <label for="genre">Genre:</label>
+        <input type="text" id="genre" [(ngModel)]="movie.genre">
+    </p>
+    <p>
+        <label for="director">Director:</label>
+        <input type="text" id="director" [(ngModel)]="movie.director">
+    </p>
+
+    <button type="button" (click)="saveMovie()">Confirm Changes</button>
+    <button type="button" class="delete" title="delete movie" (click)="deleteMovie()">Delete</button>
+    <button type="button" (click)="goBack()">Go back</button>
 </div>
