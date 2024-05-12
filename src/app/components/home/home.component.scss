@@ -16,3 +16,35 @@
   font-size: 1.25rem;
   color: #00bcd4;
 }
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
+}
+
+.search-container input[type="text"] {
+  padding: 4px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  outline: none; 
+}
+
+button[type="submit"] {
+  padding: 4px 20px;
+  background-color: #52BE00;
+  color: #fff;
+  border: 1px solid #52BE00;
+  border-radius: 2px;
+  cursor: pointer;
+  outline: none; 
+  margin-left: 10px;
+
+}
+
+button[type="submit"]:hover {
+  background-color: #52BE00;
+  border-color: #52BE00;
+}
