@@ -4,17 +4,6 @@
   </h2>
 </div>
 
-<div class="text-white">
-  <ul class="movies-list">
-    <li class="movie-item" *ngFor="let movie of movies">
-      <a routerLink="/detail/{{movie.id}}">
-        {{movie.name}}
-      </a>
-    </li>
-  </ul>
-</div>
-
-<!-- Botões de filtro -->
 <div class="filter-buttons-container">
   <button class="filter-button">
     Data
@@ -32,3 +21,20 @@
     Search
   </button>
 </div>
+
+
+
+<!--- Lista os filmes -->
+<div class="movie-list-container">
+  <ul class="movie-list">
+    <li *ngFor="let movie of movies" class="movie-item">
+      <div class="movie-card">
+        <img src="https://www.firstbenefits.org/wp-content/uploads/2017/10/placeholder-1024x1024.png" alt="Placeholder Image" class="movie-image">
+        <div class="movie-details">
+          <h3 class="movie-title">{{ movie.name }}</h3>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+
