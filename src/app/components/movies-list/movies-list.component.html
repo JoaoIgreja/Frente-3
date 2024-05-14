@@ -26,14 +26,15 @@
   <ul class="movie-list">
     <li *ngFor="let movie of movies" class="movie-item">
       <div class="movie-card">
-        <a href="detail/id"><h3 class="movie-title">{{ movie.name }}</h3></a>
+        <a href="detail/{{ movie.id }}"><h3 class="movie-title">{{ movie.name }}</h3></a>
         <div class="movie-thumbnail">
-          <a href="detail/id">
-            <img src="https://www.firstbenefits.org/wp-content/uploads/2017/10/placeholder-1024x1024.png" alt="Placeholder Image" class="movie-image">
+          <a href="detail/{{ movie.id }}">
+            <img src="/assets/img/{{ movie.id }}.jpg" alt="{{ movie.name }}" class="movie-image">
           </a>
-        </div>        
+        </div>
       </div>
     </li>
   </ul>
 </div>
+
 
