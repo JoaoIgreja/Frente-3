@@ -1,24 +1,27 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 <body>
-  <form class="form-container" (ngSubmit)="onSubmit(registerForm)" #registerForm="ngForm">
-    <div class="inputbox">
-      <input type="text" id="username" required [(ngModel)]="model.username" name="username">
-      <span>Username</span>
-      <i></i>
-    </div>
-
-    <div class="inputbox">
-      <input type="text" id="email" required [(ngModel)]="model.email" name="email">
-      <span>Email</span>
-      <i></i>
-    </div>
-
-    <div class="inputbox">
-      <input type="password" id="password" required [(ngModel)]="model.password" name="password">
-      <span>Password</span>
-      <i></i>
-    </div>
-
-    <button type="submit">Register</button>
-  </form>
+  <div class="form-wrapper">
+      <h2>Sign Up</h2>
+      <form action="#" (ngSubmit)="onSubmit(registerForm)" #registerForm="ngForm">
+          <div class="form-control">
+              <input type="text" id="username"required [(ngModel)]="model.username" name="username">
+              <label>Username</label>
+          </div>
+          <div class="form-control">
+              <input type="text" id="email"required [(ngModel)]="model.email" name="email">
+              <label>Email or phone number</label>
+          </div>
+          <div class="form-control">
+              <input type="password" id="password" required [(ngModel)]="model.password" name="password">
+              <label>Password</label>
+          </div>
+          <button type="submit">Sign In</button>
+          <div class="form-help">
+              <a href="#">Need help?</a>
+          </div>
+      </form>
+  </div>
 </body>
-

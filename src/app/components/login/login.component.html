@@ -1,18 +1,28 @@
-<body>
-  <form class="form-container" (ngSubmit)="onSubmit(registerForm)" #registerForm="ngForm">
-    <div class="inputbox">
-      <input type="text" id="email" required [(ngModel)]="model.email" name="email">
-      <span>Email</span>
-      <i></i>
-    </div>
-
-    <div class="inputbox">
-      <input type="password" id="password" required [(ngModel)]="model.password" name="password">
-      <span>Password</span>
-      <i></i>
-    </div>
-
-    <button type="submit">Register</button>
-  </form>
-</body>
-
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ </head>
+ <body>
+     <div class="form-wrapper">
+         <h2>Sign In</h2>
+         <form action="#" (ngSubmit)="onSubmit(registerForm)" #registerForm="ngForm">
+             <div class="form-control">
+                 <input type="text" id="email"required [(ngModel)]="model.email" name="email">
+                 <label>Email or phone number</label>
+             </div>
+             <div class="form-control">
+                 <input type="password" id="password" required [(ngModel)]="model.password" name="password">
+                 <label>Password</label>
+             </div>
+             <button type="submit">Sign In</button>
+             <div class="form-help">
+                 <div class="remember-me">
+                     <input type="checkbox" id="remember-me">
+                     <label for="remember-me">Remember me</label>
+                 </div>
+                 <a href="#">Need help?</a>
+             </div>
+         </form>
+         <p>New? <a href="/register">Sign up now</a></p>
+     </div>
+ </body>

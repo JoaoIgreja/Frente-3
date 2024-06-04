@@ -14,10 +14,12 @@ export class LoginComponent {
 
   onSubmit(form: { valid: any; }) {
     if (form.valid) {
-      this.curatorService.login(this.model).subscribe(
-        response => console.log('Login successful', response),
-        error => console.log('Login error', error)
-      );
+      const token = this.curatorService.login(this.model).subscribe({
+        next: response => console.log('Login successful', response),
+        error: error => console.log('Login error', error)
+      });
+
+      console.log('Token', token);
     }
   }
 

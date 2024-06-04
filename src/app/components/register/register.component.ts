@@ -14,10 +14,10 @@ export class RegisterComponent {
 
   onSubmit(form: { valid: any; }) {
     if (form.valid) {
-      this.curatorService.register(this.model).subscribe(
-        response => console.log('Registration successful', response),
-        error => console.log('Registration error', error)
-      );
+      this.curatorService.register(this.model).subscribe({
+        next: response => console.log('Registration successful', response),
+        error: error => console.log('Registration error', error)
+      });
     }
   }
 }
