@@ -24,6 +24,10 @@
   padding-top: 40px;
 }
 
+.items-center button {
+  margin-right: 10px; 
+}
+
 .search-container input[type="text"] {
   padding: 4px;
   width: 300px;
@@ -31,6 +35,8 @@
   border-radius: 2px;
   outline: none;
 }
+
+
 
 button[type="submit"] {
   padding: 4px 20px;

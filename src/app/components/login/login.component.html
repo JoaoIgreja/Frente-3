@@ -1,12 +1,6 @@
 <body>
   <form class="form-container" (ngSubmit)="onSubmit(registerForm)" #registerForm="ngForm">
     <div class="inputbox">
-      <input type="text" id="username" required [(ngModel)]="model.username" name="username">
-      <span>Username</span>
-      <i></i>
-    </div>
-
-    <div class="inputbox">
       <input type="text" id="email" required [(ngModel)]="model.email" name="email">
       <span>Email</span>
       <i></i>
