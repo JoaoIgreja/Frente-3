@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Component, Input } from '@angular/core';
 import { Movie } from 'src/app/interfaces/movie';
 import { MovieService } from 'src/app/services/movie.service';
-
+import { MOVIES } from 'src/app/utils/mock-movies';
 
 @Component({
   selector: 'app-movie-detail',
@@ -12,6 +12,7 @@ import { MovieService } from 'src/app/services/movie.service';
 })
 export class MovieDetailComponent {
   @Input() movie?: Movie;
+  movies: Movie[] = MOVIES; // Utiliza as instâncias de filmes mockados
 
   constructor(private route: ActivatedRoute, private location: Location, private movieService: MovieService) { }
 
@@ -35,7 +36,7 @@ export class MovieDetailComponent {
       this.movieService.deleteMovie(this.movie).subscribe(() => this.goBack())
     }
   }
-  
+
   goBack() {
     this.location.back();
   }

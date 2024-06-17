@@ -44,5 +44,5 @@ export const MOVIES: Movie[] = [
     duration: 175,
     score: 9.2,
     critics: []
-  }
+  },
 ]
